@@ -315,6 +315,7 @@
 
     <button class="to-top" id="to-top" type="button" aria-label="Revenir en haut">↑</button>
 
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
     <script>
         var EMAIL = 'contact.st.prevention@gmail.com';
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -341,10 +342,17 @@
             }
             ticking = false;
         }
-        window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+        // Défilement fluide et lent (inertie) ; repli sur le défilement natif si la bibliothèque ne charge pas
+        var lenis = window.Lenis ? new Lenis({ lerp: 0.07, wheelMultiplier: 0.8, smoothWheel: true, anchors: { offset: -80 } }) : null;
+        if (lenis) {
+            lenis.on('scroll', onScroll);
+            (function raf(time) { lenis.raf(time); requestAnimationFrame(raf); })(performance.now());
+        } else {
+            window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+        }
         window.addEventListener('resize', onScroll);
         onScroll();
-        $('to-top').addEventListener('click', function () { window.scrollTo({ top: 0 }); });
+        $('to-top').addEventListener('click', function () { lenis ? lenis.scrollTo(0, { duration: 1.6 }) : window.scrollTo({ top: 0 }); });
 
         // Menu mobile
         var burger = $('burger'), nav = $('nav');
