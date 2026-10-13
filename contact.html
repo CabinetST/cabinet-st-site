@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact · S&amp;T Développement</title>
+    <meta name="description" content="Contactez S&amp;T Développement pour un premier échange sur la prévention QSE, l'organisation documentaire ou un outil de gestion.">
+    <link rel="canonical" href="https://cabinetst.github.io/cabinet-st-site/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="S&amp;T Développement">
+    <meta property="og:title" content="Contact · S&amp;T Développement">
+    <meta property="og:description" content="Contactez S&amp;T Développement pour un premier échange sur la prévention QSE, l'organisation documentaire ou un outil de gestion.">
+    <meta property="og:url" content="https://cabinetst.github.io/cabinet-st-site/contact.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="theme-color" content="#0b0d0c">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&family=Syne:wght@700&display=swap">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <a class="skip" href="#contenu">Aller au contenu</a>
+    <div class="scene" aria-hidden="true"><canvas id="scene"></canvas></div>
+    <div class="progress" aria-hidden="true"></div>
+
+    <header class="header">
+        <div class="wrap">
+            <a class="brand" href="index.html" aria-label="S&amp;T Développement, accueil">
+                <span class="brand-mark" aria-hidden="true">S&amp;T</span>
+                <span class="brand-name">S&amp;T Développement<small>QSE · DOCUMENTS · GESTION</small></span>
+            </a>
+            <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu"><i></i></button>
+            <nav class="nav" id="nav" aria-label="Navigation principale">
+                <a href="prevention-qse.html">Prévention QSE</a>
+                <a href="gestion-documentaire.html">Gestion documentaire</a>
+                <a href="gestion-commerciale.html">Gestion commerciale</a>
+                <a href="methode.html">Méthode</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="faq.html">FAQ</a>
+                <a class="nav-cta" href="contact.html" aria-current="page">Nous contacter</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenu">
+<section class="page-hero">
+            <div class="wrap">
+                <span class="label reveal">Contact</span>
+                <h1 class="h1" data-lines style="margin-top:1.5rem">Parlons de<br>votre projet.</h1>
+                <p class="lead reveal">Décrivez votre activité et votre besoin : nous revenons vers vous par email pour convenir d'un premier échange.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap contact-grid">
+                <dl class="contact-meta reveal">
+                    <div><dt>Email</dt><dd><a class="link" href="mailto:contact.st.prevention@gmail.com">contact.st.prevention@gmail.com</a></dd></div>
+                    <div><dt>Interlocuteurs</dt><dd>Romain et Alexis</dd></div>
+                    <div><dt>Intervention</dt><dd>Sur site ou à distance, selon la mission</dd></div>
+                </dl>
+
+                <form class="form reveal" id="contact-form" novalidate data-endpoint="https://formsubmit.co/ajax/contact.st.prevention@gmail.com" data-fallback-email="contact.st.prevention@gmail.com">
+                    <div class="field">
+                        <label for="f-nom">Nom <span class="req" aria-hidden="true">*</span></label>
+                        <input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="f-nom-err">
+                        <span class="field-error" id="f-nom-err" aria-live="polite"></span>
+                    </div>
+                    <div class="field">
+                        <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+                        <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err">
+                        <span class="field-error" id="f-email-err" aria-live="polite"></span>
+                    </div>
+                    <div class="field">
+                        <label for="f-entreprise">Entreprise</label>
+                        <input id="f-entreprise" name="entreprise" type="text" autocomplete="organization">
+                    </div>
+                    <div class="field">
+                        <label for="f-tel">Téléphone (facultatif)</label>
+                        <input id="f-tel" name="telephone" type="tel" autocomplete="tel">
+                    </div>
+                    <div class="field field-wide">
+                        <label for="f-sujet">Sujet <span class="req" aria-hidden="true">*</span></label>
+                        <select id="f-sujet" name="sujet" required aria-describedby="f-sujet-err">
+                            <option data-key="qse">Prévention QSE et DUERP</option>
+                            <option data-key="doc">Gestion documentaire et sur mesure</option>
+                            <option data-key="com">Gestion commerciale, stocks et logistique</option>
+                            <option data-key="autre">Autre demande</option>
+                        </select>
+                        <span class="field-error" id="f-sujet-err" aria-live="polite"></span>
+                    </div>
+                    <div class="field field-wide">
+                        <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
+                        <textarea id="f-message" name="message" required aria-describedby="f-message-err" placeholder="Votre activité, votre effectif, votre besoin."></textarea>
+                        <span class="field-error" id="f-message-err" aria-live="polite"></span>
+                    </div>
+                    <div class="hp" aria-hidden="true"><label for="f-hp">Ne pas remplir</label><input id="f-hp" name="_hp" type="text" tabindex="-1" autocomplete="off"></div>
+                    <p class="consent">Vos données servent uniquement à répondre à votre demande. Elles sont transmises par email via le service FormSubmit. En savoir plus : <a href="confidentialite.html">politique de confidentialité</a>.</p>
+                    <p class="form-msg" id="form-msg" role="status" tabindex="-1" hidden></p>
+                    <div class="form-foot">
+                        <span class="mono muted">* champs obligatoires</span>
+                        <button class="btn btn-primary" type="submit">Envoyer le message <span class="arrow" aria-hidden="true">→</span></button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-top">
+                <div>
+                    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S&amp;T</span><span class="brand-name">S&amp;T Développement</span></a>
+                    <p class="footer-claim">Moins de complexité, plus de maîtrise.</p>
+                </div>
+                <div>
+                    <h4>Expertises</h4>
+                    <ul>
+                        <li><a href="prevention-qse.html">Prévention QSE</a></li>
+                        <li><a href="gestion-documentaire.html">Gestion documentaire</a></li>
+                        <li><a href="gestion-commerciale.html">Gestion commerciale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>S&amp;T</h4>
+                    <ul>
+                        <li><a href="methode.html">Méthode</a></li>
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="confidentialite.html">Confidentialité</a></li>
+                        <li><a href="mailto:contact.st.prevention@gmail.com">contact.st.prevention@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© <span data-year>2026</span> S&amp;T Développement</span>
+                <span>Site sans cookie de mesure d'audience ni de publicité</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
