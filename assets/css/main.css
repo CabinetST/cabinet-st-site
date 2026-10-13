@@ -275,3 +275,5 @@ ul, ol { margin: 0; padding: 0; }
 .service li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; background: var(--c-accent); border-radius: 1px; }
 .service .link { margin-top: var(--s-1); font-weight: 600; }
 @media (max-width: 800px) { .services { grid-template-columns: minmax(0, 1fr); } }
+.service li a { text-decoration: none; }
+.service li a:hover { color: var(--c-accent); text-decoration: underline; }
