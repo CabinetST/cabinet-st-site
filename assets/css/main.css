@@ -264,3 +264,14 @@ ul, ol { margin: 0; padding: 0; }
     html { scroll-behavior: auto; }
     .js .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Services de l'accueil */
+.services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
+.service { background: var(--c-surface); border: 1px solid var(--c-line); border-top: 3px solid var(--c-accent); border-radius: var(--r-lg); padding: var(--s-4) var(--s-3) var(--s-3); display: grid; gap: var(--s-2); align-content: start; }
+.service h3 { font-family: var(--f-display); font-size: var(--t-xl); line-height: 1.2; }
+.service p { color: var(--c-muted); }
+.service ul { list-style: none; display: grid; gap: 0.5rem; }
+.service li { padding-left: 1.2rem; position: relative; }
+.service li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; background: var(--c-accent); border-radius: 1px; }
+.service .link { margin-top: var(--s-1); font-weight: 600; }
+@media (max-width: 800px) { .services { grid-template-columns: minmax(0, 1fr); } }
